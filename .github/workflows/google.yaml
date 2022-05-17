@@ -47,7 +47,7 @@ jobs:
       with:
         token_format: 'access_token'
         workload_identity_provider: 'projects/1049521604036/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
-        service_account: 'assignment-03@assignment-03-350413.iam.gserviceaccount.com'
+        service_account: 'Assignment-03@assignment-03-350413.iam.gserviceaccount.com'
 
     # Alternative option - authentication via credentials json
     # - id: 'auth'
