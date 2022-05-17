@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignment-3
+spec:
+  selector:
+    matchLabels:
+      app: assignment-3
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: assignment-3
+    spec:
+      containers:
+        - name: nodeserver
+          image: mamshaman/node-sliit
+          ports:
+            - containerPort: 8000
