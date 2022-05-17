@@ -1,4 +1,4 @@
-# This workflow will build a docker container, publish it to Google Container Registry, and deploy it to GKE when there is a push to the main branch.
+# This workflow will build a docker container, publish it to Google Container Registry, and deploy it to GKE when there is a push to the master branch.
 #
 # To configure this workflow:
 #
@@ -15,13 +15,13 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GAR_LOCATION: us-central1 # TODO: update region of the Artifact Registry
   GKE_CLUSTER: autopilot-cluster-1    # TODO: update to cluster name
-  GKE_ZONE:  us-central1   # TODO: update to cluster zone
+  GKE_ZONE: us-central1   # TODO: update to cluster zone
   DEPLOYMENT_NAME: assignment-3 # TODO: update to deployment name
   REPOSITORY: mamshaman # TODO: update to Artifact Registry docker repository
   IMAGE: node-sliit
@@ -46,7 +46,7 @@ jobs:
       uses: 'google-github-actions/auth@v0'
       with:
         token_format: 'access_token'
-        workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+        workload_identity_provider: 'projects/1049521604036/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
         service_account: 'assignment-03@assignment-03-350413.iam.gserviceaccount.com'
 
     # Alternative option - authentication via credentials json
